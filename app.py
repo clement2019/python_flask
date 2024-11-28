@@ -1,12 +1,20 @@
 from flask import Flask, render_template
 app = Flask(__name__)
-@app.route("/")
+
+@app.route('/')
+def index():
+    
+   
+    return "welcome home"
+
+@app.route('/homepage')
 def homepage():
     name="Mrs Akinfolaju"
-    return render_template("homepage.html", name=name)
+    email="peju@yahoo.com"
+    return render_template('homepage.html', name=name,email=email)
 
 
-@app.route("/about")
+@app.route('/about')
 def about():
     return "Welcome to about us page!"
 
@@ -42,8 +50,6 @@ def division ():
 #The output should be yes i got it, this is my result
 
 
-from flask import Flask
-app = Flask(__name__)
 
 @app.route("/contact")
 def contact ():
